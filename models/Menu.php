@@ -62,4 +62,14 @@ class Menu extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Work::className(), ['id_menu' => 'id']);
     }
+    /**
+     * @return array
+     */
+    public function getMenuList()
+    {
+        $listMenu = self::find()->with('subjects')->asArray()->all();
+
+        return $listMenu;
+    }
+
 }

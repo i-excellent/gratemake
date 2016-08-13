@@ -1,8 +1,6 @@
  var ajaxurl = '/ajax/';
     var  csrfToken = $('meta[name=csrf-token]').prop('content');
-    $("document").ready(function() {
-        $("select[name='Work[id_menu]']").bind("change",
-                function menu(){
+                function getSubject(){
                     $.post(ajaxurl + "menu", {
                         menu: $("select[name='Work[id_menu]']").val(),
                         _csrf: csrfToken
@@ -13,6 +11,5 @@
                             $("select[name='Work[id_subject]']").append($("<option value='" + data[id].id + "'>" + data[id].name + "</option>"));
                         }
                 })
-        })
-    });
+        }
 

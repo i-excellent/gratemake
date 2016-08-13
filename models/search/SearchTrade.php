@@ -10,7 +10,7 @@ use app\models\Trade as TradeModel;
 /**
  * Trade represents the model behind the search form about `app\models\Trade`.
  */
-class Trade extends TradeModel
+class SearchTrade extends TradeModel
 {
     /**
      * @inheritdoc

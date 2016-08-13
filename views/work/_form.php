@@ -16,7 +16,7 @@ use kartik\file\FileInput;
         <div class="col-md-6">
             <?=$form->field($model,'theme')->textInput([])?>
             <?=$form->field($model,'id_type')->dropDownList(Work::getType());?>
-            <?=$form->field($model,'id_menu')->dropDownList(MainTrait::getDropList(MainTrait::getMenu()));?>
+            <?=$form->field($model,'id_menu',['options'=>['onchange'=>'getSubject()']])->dropDownList(MainTrait::getDropList(MainTrait::getMenu()));?>
             <?=$form->field($model,'id_subject')->dropDownList(MainTrait::getDropList(MainTrait::getSubject(1)));?>
             <?=$form->field($model,'price')->textInput(['value'=>'0'])->label('Цена без комиссии сервиса(Руб.)')?>
             <?=$form->field($model,'year')->textInput()?>

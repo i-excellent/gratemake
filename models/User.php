@@ -104,7 +104,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getTrades()
     {
-        return $this->hasMany(Trade::className(), ['id_user_seller' => 'id']);
+        return $this->hasMany(SearchTrade::className(), ['id_user_seller' => 'id']);
     }
 
     /**
@@ -112,7 +112,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getTrades0()
     {
-        return $this->hasMany(Trade::className(), ['id_user_buyer' => 'id']);
+        return $this->hasMany(SearchTrade::className(), ['id_user_buyer' => 'id']);
     }
 
     /**

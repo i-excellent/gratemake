@@ -86,7 +86,7 @@ class Work extends ActiveRecord
      */
     public function getTrades()
     {
-        return $this->hasMany(Trade::className(), ['id_work' => 'id']);
+        return $this->hasMany(SearchTrade::className(), ['id_work' => 'id']);
     }
 
     /**

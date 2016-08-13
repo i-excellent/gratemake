@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
 /**
  * This is the model class for table "trade".
  *
@@ -18,7 +18,7 @@ use Yii;
  * @property User $userBuyer
  * @property Work $work
  */
-class Trade extends \yii\db\ActiveRecord
+class Trade extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -49,12 +49,12 @@ class Trade extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'id_user_seller' => 'Id User Seller',
-            'id_user_buyer' => 'Id User Buyer',
-            'id_work' => 'Id Work',
-            'time' => 'Time',
-            'price' => 'Price',
+            'id' => 'Номер сделки',
+            'id_user_seller' => 'Продавец',
+            'id_user_buyer' => 'Покупатель',
+            'id_work' => 'Работа',
+            'time' => 'Время сделки',
+            'price' => 'Сумма сделки',
         ];
     }
 
