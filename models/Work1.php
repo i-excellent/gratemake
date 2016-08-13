@@ -1,40 +1,33 @@
 <?php
 
 namespace app\models;
-use yii\web\UploadedFile;
-use yii\helpers\ArrayHelper;
-use yii\db\ActiveRecord;
+
 use Yii;
+use \yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
+use yii\web\UploadedFile;
 use app\components\MainTrait;
-use yii\helpers\BaseFileHelper;
 
 /**
- * This is the model class for table "{{%work}}".
+ * This is the model class for table "work".
  *
  * @property integer $id
  * @property integer $id_menu
  * @property integer $id_subject
  * @property integer $id_user
  * @property integer $id_type
- * @property string $theme
  * @property string $name_file
  * @property integer $count_page
  * @property string $description
  * @property double $price
  * @property string $time_public
- * @property string $save_name
- * @property string $year
- * @property string $bibliography
- * @property string $content
  * @property integer $views
  * @property string $crypte_views
- *
- * @property Trade[] $trades
- * @property Menu $menu
- * @property Subject $subject
- * @property User $user
+ * @property string $year
+ * @property string $theme
+ * @property string $save_name
  */
-class Work extends ActiveRecord
+class Work1 extends ActiveRecord
 {
     /**
      * @var UploadedFile
@@ -54,12 +47,10 @@ class Work extends ActiveRecord
     const SOCHIN = 6;
     const LAB = 7;
     const ETC = 8;
-    /**
-     * @inheritdoc
-     */
+    
     public static function tableName()
     {
-        return '{{%work}}';
+        return 'work';
     }
 
     /**
@@ -68,50 +59,19 @@ class Work extends ActiveRecord
     public function rules()
     {
         return [
-            [['id_menu', 'id_subject', 'id_user', 'id_type', 'count_page', 'views'], 'integer'],
-            [['theme'], 'required'],
-            [['description', 'bibliography', 'content', 'crypte_views'], 'string'],
-            [['price'], 'number'],
-            [['time_public', 'year'], 'safe'],
-            [['theme', 'name_file'], 'string', 'max' => 255],
-            [['save_name'], 'string', 'max' => 50],
-            [['id_menu'], 'exist', 'skipOnError' => true, 'targetClass' => Menu::className(), 'targetAttribute' => ['id_menu' => 'id']],
-            [['id_subject'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['id_subject' => 'id']],
-            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
+            [['id', 'id_menu', 'id_subject', 'id_user', 'id_type', 'count_page', 'views','year'], 'integer'],
+            [['description', 'crypte_views'], 'string'],
+            [['time_public'], 'safe'],
+            [['theme','file','description','content'], 'required'],
+            [['name_file', 'theme'], 'string', 'max' => 255],
+            [['year'], 'integer', 'min' => 1995, 'max' => 2018],
+            [['price'], 'integer', 'min' => 0, 'max' => 60000],
         ];
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @inheritdoc
      */
-    public function getTrades()
-    {
-        return $this->hasMany(Trade::className(), ['id_work' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getMenu()
-    {
-        return $this->hasOne(Menu::className(), ['id' => 'id_menu']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public  function getSubject()
-    {
-        return $this->hasOne(Subject::className(), ['id' => 'id_subject']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUser()
-    {
-        return $this->hasOne(User::className(), ['id' => 'id_user']);
-    }
     public function attributeLabels()
     {
         return [
@@ -128,7 +88,7 @@ class Work extends ActiveRecord
             'id_user' => 'Пользователь',
             'id_type' => 'Вид работы',
             'name_file' => 'Имя файла',
-            'views' => 'Просмотры',
+            'views' => 'Просмотр',
             'crypte_views' => 'Окраниченый просмотр',
             'bibliography' => 'Список литературы',
             'content' => 'Содержание',
@@ -149,23 +109,20 @@ class Work extends ActiveRecord
     }
     public function upload()
     {
-
+        // get the uploaded file instance. for multiple file uploads
+        // the following data will return an array (you may need to use
+        // getInstances method)
         $file = UploadedFile::getInstance($this, 'file');
+
+        // if no image was uploaded abort the upload
         if (empty($file)) {
             return false;
         }
         $this->save_name = Yii::$app->user->identity->getId().'_'.time().'.'.$file->extension;
         $this->file = '/'.$this->save_name;
 
-        iconv("UTF-8", "ISO-8859-1//TRANSLIT", $file->name);
-        $this->name_file=MainTrait::getTranslit($file->name);
-        $this->id_user=Yii::$app->user->identity->id;
-                $path = $this->getAvatarFile();
-                $distDir = dirname($path);
-                BaseFileHelper::createDirectory($distDir);
-
-      return $file->saveAs($path);
-
+        // the uploaded image instance
+        return $file;
     }
 
     /**

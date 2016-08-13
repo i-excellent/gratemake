@@ -2,13 +2,13 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
-/* @var $model app\models\Work */
-
+/* @var $model app\models\Trade */
 ?>
-<div class="work-create">
+<div class="trade-update">
+
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+
 </div>

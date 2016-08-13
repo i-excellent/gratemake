@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Work;
-use app\models\search\SearchWork;
+use app\models\Trade;
+use app\models\search\Trade as TradeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,16 +12,15 @@ use \yii\web\Response;
 use yii\helpers\Html;
 
 /**
- * WorkController implements the CRUD actions for Work model.
+ * TradeController implements the CRUD actions for Trade model.
  */
-class WorkController extends Controller
+class TradeController extends Controller
 {
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -34,12 +33,12 @@ class WorkController extends Controller
     }
 
     /**
-     * Lists all Work models.
+     * Lists all Trade models.
      * @return mixed
      */
     public function actionIndex()
     {    
-        $searchModel = new SearchWork();
+        $searchModel = new TradeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -50,7 +49,7 @@ class WorkController extends Controller
 
 
     /**
-     * Displays a single Work model.
+     * Displays a single Trade model.
      * @param integer $id
      * @return mixed
      */
@@ -60,7 +59,7 @@ class WorkController extends Controller
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
-                    'title'=> "Work #".$id,
+                    'title'=> "Trade #".$id,
                     'content'=>$this->renderAjax('view', [
                         'model' => $this->findModel($id),
                     ]),
@@ -75,7 +74,7 @@ class WorkController extends Controller
     }
 
     /**
-     * Creates a new Work model.
+     * Creates a new Trade model.
      * For ajax request will return json object
      * and for non-ajax request if creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -83,7 +82,7 @@ class WorkController extends Controller
     public function actionCreate()
     {
         $request = Yii::$app->request;
-        $model = new Work();  
+        $model = new Trade();  
 
         if($request->isAjax){
             /*
@@ -92,31 +91,31 @@ class WorkController extends Controller
             Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isGet){
                 return [
-                    'title'=> "Публикация",
+                    'title'=> "Create new Trade",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Зыкрыть',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                                Html::button('Сохранить',['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
         
                 ];         
-            }else if($model->load($request->post()) &&  $model->upload() &&  $model->save()){
+            }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Публикация",
-                    'content'=>'<span class="text-success">Робота опубликована</span>',
-                    'footer'=> Html::button('Зыкрыть',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Загрузить ещё',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                    'title'=> "Create new Trade",
+                    'content'=>'<span class="text-success">Create Trade success</span>',
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                            Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
         
                 ];         
             }else{           
                 return [
-                    'title'=> "Публикация",
+                    'title'=> "Create new Trade",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Зыкрыть',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                                Html::button('Сохранить',['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
         
                 ];         
             }
@@ -124,7 +123,7 @@ class WorkController extends Controller
             /*
             *   Process for non-ajax request
             */
-            if ($model->load($request->post()) &&  $model->upload() && $model->save()) {
+            if ($model->load($request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 return $this->render('create', [
@@ -136,20 +135,17 @@ class WorkController extends Controller
     }
 
     /**
-     * Updates an existing Work model.
+     * Updates an existing Trade model.
      * For ajax request will return json object
      * and for non-ajax request if update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
-     * @throws string not found
      * @return mixed
      */
     public function actionUpdate($id)
     {
         $request = Yii::$app->request;
-        $model = $this->findModel($id);
-        if($model->id_user != Yii::$app->user->getId()){
-            throw new NotFoundHttpException('Заприщенное действие');
-        }
+        $model = $this->findModel($id);       
+
         if($request->isAjax){
             /*
             *   Process for ajax request
@@ -157,7 +153,7 @@ class WorkController extends Controller
             Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isGet){
                 return [
-                    'title'=> "Update Work #".$id,
+                    'title'=> "Update Trade #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
@@ -167,7 +163,7 @@ class WorkController extends Controller
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Work #".$id,
+                    'title'=> "Trade #".$id,
                     'content'=>$this->renderAjax('view', [
                         'model' => $model,
                     ]),
@@ -176,7 +172,7 @@ class WorkController extends Controller
                 ];    
             }else{
                  return [
-                    'title'=> "Update Work #".$id,
+                    'title'=> "Update Trade #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
@@ -199,21 +195,17 @@ class WorkController extends Controller
     }
 
     /**
-     * Delete an existing Work model.
+     * Delete an existing Trade model.
      * For ajax request will return json object
      * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @throws string not found
      * @return mixed
      */
     public function actionDelete($id)
     {
         $request = Yii::$app->request;
-        $model = $this->findModel($id);
-        if($model->id_user != Yii::$app->user->getId()){
-            throw new NotFoundHttpException('Заприщенное действие');
-        }
-        $model->delete();
+        $this->findModel($id)->delete();
+
         if($request->isAjax){
             /*
             *   Process for ajax request
@@ -231,11 +223,10 @@ class WorkController extends Controller
     }
 
      /**
-     * Delete multiple existing Work model.
+     * Delete multiple existing Trade model.
      * For ajax request will return json object
      * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
-     * @throws string not found
-     * @param integer
+     * @param integer $id
      * @return mixed
      */
     public function actionBulkDelete()
@@ -244,9 +235,6 @@ class WorkController extends Controller
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
             $model = $this->findModel($pk);
-            if($model->id_user != Yii::$app->user->getId()){
-                throw new NotFoundHttpException('Заприщенное действие');
-            }
             $model->delete();
         }
 
@@ -266,15 +254,15 @@ class WorkController extends Controller
     }
 
     /**
-     * Finds the Work model based on its primary key value.
+     * Finds the Trade model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Work the loaded model
+     * @return Trade the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Work::findOne($id)) !== null) {
+        if (($model = Trade::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
