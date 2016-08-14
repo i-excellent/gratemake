@@ -10,14 +10,14 @@ use johnitvn\ajaxcrud\BulkButtonWidget;
 /* @var $menuList app\models\Menu */
 
 CrudAsset::register($this);
-
+$this->title = 'Каталог работ';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
     <div class="col-md-3">
-        <?= $this->render('_menu') ?>
+        <?= $this->render('@app/views/layouts/filter');?>
     </div>
     <div class="col-md-9">
-        <?=$this->render('index', ['menuList' => $menuList]
-        );?>
+        <?=$this->render('index', ['menuList' => $menuList]);?>
     </div>
 </div>

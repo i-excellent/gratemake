@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\components\MainTrait;
+use app\models\Subject;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -60,6 +62,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $res=Subject::find()->asArray()->all();
+        foreach ($res as $row){
+            $customer = Subject::findOne($row['id']);
+            $row['name'] = MainTrait::getTranslit($row['name']);             // замена на англ
+            $row['name'] = str_replace(' ', '_', $row['name']);             //замена пробелов
+            $row['name'] = mb_strtolower ($row['name']);                   //нижний регистр
+            $row['name']=preg_replace('#\(?(\w)\)?#s','$1',$row['name']); //удалить круглые скобки
+            $customer->url = $row['name']
+            ;
+            $customer->update();
+        }
+
         return $this->render('index');
     }
 

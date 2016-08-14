@@ -36,15 +36,18 @@ AppAsset::register($this);
     <?=Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Каталог готовых работ', 'url' => ['/site/index']],
+            ['label' => 'Каталог готовых работ', 'url' => ['/menu/catalog']],
             ['label' => 'Как купить работу?', 'url' => ['/site/about']],
             ['label' => 'Продать работу', 'url' => ['/work/create']],
 
             ['label' => 'О бирже', 'url' => ['/site/contact']],
             '<li>'
-            . Html::beginForm(['/search'], 'post', ['class' => 'navbar-form navbar-left'])
-            . Html::textInput('search','',['placeholder'=>'Поиск работ','class'=>'form-control'])
-            . Html::submitButton('Поиск',['class'=>'form-control'])
+            . Html::beginForm(['/search'], 'post', ['class' => 'navbar-form navbar-left']).
+            '<div class="input-group">
+            <input type="text" class="form-control" placeholder="Введите текст">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Найти!</button>
+                 </span></div>'
             . Html::endForm()
             . '</li>',
 

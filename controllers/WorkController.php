@@ -38,14 +38,9 @@ class WorkController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {    
-        $searchModel = new SearchWork();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+    {
+        $row = Work::find()->asArray()->all();
+        return $this->render('show', ['row'=>$row]);
     }
 
 

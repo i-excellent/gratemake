@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property string $url
  * @property integer $count
  *
  * @property Subject[] $subjects
@@ -31,7 +32,7 @@ class Menu extends \yii\db\ActiveRecord
     {
         return [
             [['count'], 'integer'],
-            [['name'], 'string', 'max' => 50],
+            [['name', 'url'], 'string', 'max' => 50],
         ];
     }
 
@@ -43,6 +44,7 @@ class Menu extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'url' => 'Адрес',
             'count' => 'Count',
         ];
     }
