@@ -8,6 +8,7 @@ use johnitvn\ajaxcrud\BulkButtonWidget;
 
 /* @var $this yii\web\View */
 /* @var $row app\models\Work */
+/* @var $pages app\controllers\WorkController */
 
 CrudAsset::register($this);
 $this->title = 'Каталог работ';
@@ -18,6 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $this->render('@app/views/layouts/filter');?>
     </div>
     <div class="col-md-9">
-        <?=$this->render('_list',['row'=>$row]);?>
+        <?=$this->render('_list',['row'=>$row,'pages'=>$pages]);?>
     </div>
 </div>

@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Work;
 use app\models\search\SearchWork;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -39,11 +40,23 @@ class WorkController extends Controller
      */
     public function actionIndex()
     {
-        $row = Work::find()->asArray()->all();
-        return $this->render('show', ['row'=>$row]);
+        $searchModel = new SearchWork();
+        $query = $searchModel->searchMenu(Yii::$app->request->queryParams);
+        $countQuery = clone $query;
+        $count = $countQuery->count();
+        $pages = new Pagination(['totalCount' => $count,'defaultPageSize' => 12]);
+        $models = $query->offset($pages->offset)
+            ->limit(12)
+            ->all();
+
+
+        return $this->render('show', ['row'=>$models ,'pages'=>$pages]);
     }
 
-
+    public function actionPresent($id){
+        $work=Work::findOne(['id'=>$id])->toArray();
+        return $this->render('present',['work'=>$work]);
+    }
     /**
      * Displays a single Work model.
      * @param integer $id

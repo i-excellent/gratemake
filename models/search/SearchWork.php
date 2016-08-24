@@ -43,6 +43,7 @@ class SearchWork extends Work
      */
     public function search($params)
     {
+
         $query = Work::find()->where([ 'id_user'=> Yii::$app->user->getId()]);
 
         $dataProvider = new ActiveDataProvider([
@@ -79,5 +80,37 @@ class SearchWork extends Work
             ->andFilterWhere(['like', 'crypte_views', $this->crypte_views]);
 
         return $dataProvider;
+    }
+    public function     searchMenu($params)
+    {
+        $query = Work::find();
+
+
+        $this->load($params);
+
+        if ($this->validate()) {
+            $this->year=$params['year'];
+            $this->count_page=$params['page'];
+            $this->price=$params['free'];
+            $this->id_type=$params['type'];
+            $this->id_menu=$params['menu'];
+
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+
+        }
+
+        $query->andFilterWhere(['>=','year' , $this->year])
+              ->andFilterWhere(['>=','count_page' , $this->count_page])
+              ->andFilterWhere(['>=','price' , $this->price])
+              ->andFilterWhere(['id_type' => $this->id_type,'id_menu' => $this->id_menu])
+              ->andFilterWhere(['>=','count_page' , $this->count_page]);
+
+        $query->andFilterWhere(['like', 'theme', $params['search']])
+            ->andFilterWhere(['like', 'description', $params['search']])
+            ->andFilterWhere(['like', 'bibliography', $params['search']]);
+
+
+        return $query;
     }
 }

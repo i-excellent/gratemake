@@ -176,55 +176,6 @@
         "installation-source": "dist"
     },
     {
-        "name": "yiisoft/yii2-composer",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-composer.git",
-            "reference": "e882cc327a6935a41f2e8665b9ef0317f6852d4d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/e882cc327a6935a41f2e8665b9ef0317f6852d4d",
-            "reference": "e882cc327a6935a41f2e8665b9ef0317f6852d4d",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "^1.0"
-        },
-        "time": "2016-06-05 20:34:32",
-        "type": "composer-plugin",
-        "extra": {
-            "class": "yii\\composer\\Plugin",
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\composer\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com"
-            }
-        ],
-        "description": "The composer plugin for Yii extension installer",
-        "keywords": [
-            "composer",
-            "extension installer",
-            "yii2"
-        ]
-    },
-    {
         "name": "ezyang/htmlpurifier",
         "version": "v4.8.0",
         "version_normalized": "4.8.0.0",
@@ -333,256 +284,6 @@
         ]
     },
     {
-        "name": "yiisoft/yii2",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-framework.git",
-            "reference": "15d0866f5802020c2c048b66bbff61ce693de601"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/15d0866f5802020c2c048b66bbff61ce693de601",
-            "reference": "15d0866f5802020c2c048b66bbff61ce693de601",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
-            "bower-asset/jquery.inputmask": "~3.2.2",
-            "bower-asset/punycode": "1.3.*",
-            "bower-asset/yii2-pjax": "~2.0.1",
-            "cebe/markdown": "~1.0.0 | ~1.1.0",
-            "ext-ctype": "*",
-            "ext-mbstring": "*",
-            "ezyang/htmlpurifier": "~4.6",
-            "lib-pcre": "*",
-            "php": ">=5.4.0",
-            "yiisoft/yii2-composer": "~2.0.4"
-        },
-        "time": "2016-08-12 14:55:43",
-        "bin": [
-            "yii"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com",
-                "homepage": "http://www.yiiframework.com/",
-                "role": "Founder and project lead"
-            },
-            {
-                "name": "Alexander Makarov",
-                "email": "sam@rmcreative.ru",
-                "homepage": "http://rmcreative.ru/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Maurizio Domba",
-                "homepage": "http://mdomba.info/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Carsten Brandt",
-                "email": "mail@cebe.cc",
-                "homepage": "http://cebe.cc/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Timur Ruziev",
-                "email": "resurtm@gmail.com",
-                "homepage": "http://resurtm.com/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Dmitry Naumenko",
-                "email": "d.naumenko.a@gmail.com",
-                "role": "Core framework development"
-            }
-        ],
-        "description": "Yii PHP Framework Version 2",
-        "homepage": "http://www.yiiframework.com/",
-        "keywords": [
-            "framework",
-            "yii2"
-        ]
-    },
-    {
-        "name": "swiftmailer/swiftmailer",
-        "version": "5.x-dev",
-        "version_normalized": "5.9999999.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/swiftmailer/swiftmailer.git",
-            "reference": "17ba8f8fc03074f90771e52b226698e37bc2c115"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/17ba8f8fc03074f90771e52b226698e37bc2c115",
-            "reference": "17ba8f8fc03074f90771e52b226698e37bc2c115",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9.1"
-        },
-        "time": "2016-07-09 18:06:48",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.4-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "lib/swift_required.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Chris Corbyn"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Swiftmailer, free feature-rich PHP mailer",
-        "homepage": "http://swiftmailer.org",
-        "keywords": [
-            "email",
-            "mail",
-            "mailer"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-swiftmailer",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-            "reference": "163b9c6273e133c43a596aef46a9f5b1537731f9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/163b9c6273e133c43a596aef46a9f5b1537731f9",
-            "reference": "163b9c6273e133c43a596aef46a9f5b1537731f9",
-            "shasum": ""
-        },
-        "require": {
-            "swiftmailer/swiftmailer": "~5.0",
-            "yiisoft/yii2": ">=2.0.4"
-        },
-        "time": "2016-04-14 08:50:13",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\swiftmailer\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com"
-            }
-        ],
-        "description": "The SwiftMailer integration for the Yii framework",
-        "keywords": [
-            "email",
-            "mail",
-            "mailer",
-            "swift",
-            "swiftmailer",
-            "yii2"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-codeception",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-codeception.git",
-            "reference": "572a6d46d942cc5733c45931fdbd1d60228f3c89"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/572a6d46d942cc5733c45931fdbd1d60228f3c89",
-            "reference": "572a6d46d942cc5733c45931fdbd1d60228f3c89",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": ">=2.0.4"
-        },
-        "time": "2016-04-14 08:46:27",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\codeception\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Mark Jebri",
-                "email": "mark.github@yandex.ru"
-            }
-        ],
-        "description": "The Codeception integration for the Yii framework",
-        "keywords": [
-            "codeception",
-            "yii2"
-        ]
-    },
-    {
         "name": "bower-asset/bootstrap",
         "version": "v3.3.7",
         "version_normalized": "3.3.7.0",
@@ -634,107 +335,6 @@
         ]
     },
     {
-        "name": "yiisoft/yii2-bootstrap",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-            "reference": "f41768b3ad7524a7bfb65a328d085e83d32bbc7e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/f41768b3ad7524a7bfb65a328d085e83d32bbc7e",
-            "reference": "f41768b3ad7524a7bfb65a328d085e83d32bbc7e",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
-            "yiisoft/yii2": ">=2.0.6"
-        },
-        "time": "2016-07-27 22:19:11",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            },
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\bootstrap\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com"
-            }
-        ],
-        "description": "The Twitter Bootstrap extension for the Yii framework",
-        "keywords": [
-            "bootstrap",
-            "yii2"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-debug",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-debug.git",
-            "reference": "721045af916ed66cf217f4fe66137348a165e54c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/721045af916ed66cf217f4fe66137348a165e54c",
-            "reference": "721045af916ed66cf217f4fe66137348a165e54c",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": ">=2.0.4",
-            "yiisoft/yii2-bootstrap": "*"
-        },
-        "time": "2016-07-29 12:59:20",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\debug\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com"
-            }
-        ],
-        "description": "The debugger extension for the Yii framework",
-        "keywords": [
-            "debug",
-            "debugger",
-            "yii2"
-        ]
-    },
-    {
         "name": "phpspec/php-diff",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -773,61 +373,6 @@
             }
         ],
         "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays)."
-    },
-    {
-        "name": "yiisoft/yii2-gii",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-gii.git",
-            "reference": "529e35ba79b6e25beb192da161ab0bf4f809cf2b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/529e35ba79b6e25beb192da161ab0bf4f809cf2b",
-            "reference": "529e35ba79b6e25beb192da161ab0bf4f809cf2b",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/typeahead.js": "0.10.* | ~0.11.0",
-            "phpspec/php-diff": ">=1.0.2",
-            "yiisoft/yii2": ">=2.0.4",
-            "yiisoft/yii2-bootstrap": "~2.0"
-        },
-        "time": "2016-08-08 21:46:45",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            },
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\gii\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com"
-            }
-        ],
-        "description": "The Gii extension for the Yii framework",
-        "keywords": [
-            "code generator",
-            "gii",
-            "yii2"
-        ]
     },
     {
         "name": "fzaninotto/faker",
@@ -882,166 +427,174 @@
         ]
     },
     {
-        "name": "yiisoft/yii2-faker",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "setasign/fpdi",
+        "version": "1.6.1",
+        "version_normalized": "1.6.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/yiisoft/yii2-faker.git",
-            "reference": "6e6eb430809e3f9c05e367303909a05a4912d4c0"
+            "url": "https://github.com/Setasign/FPDI.git",
+            "reference": "5b899b2b41463bf261aa69840fd30b50950a500c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/6e6eb430809e3f9c05e367303909a05a4912d4c0",
-            "reference": "6e6eb430809e3f9c05e367303909a05a4912d4c0",
+            "url": "https://api.github.com/repos/Setasign/FPDI/zipball/5b899b2b41463bf261aa69840fd30b50950a500c",
+            "reference": "5b899b2b41463bf261aa69840fd30b50950a500c",
             "shasum": ""
         },
-        "require": {
-            "fzaninotto/faker": "~1.4",
-            "yiisoft/yii2": "*"
+        "suggest": {
+            "setasign/fpdf": "FPDI will extend this class but as it is also possible to use \"tecnickcom/tcpdf\" as an alternative there's no fixed dependency configured.",
+            "setasign/fpdi-fpdf": "Use this package to automatically evaluate dependencies to FPDF.",
+            "setasign/fpdi-tcpdf": "Use this package to automatically evaluate dependencies to TCPDF."
         },
-        "time": "2016-04-14 08:47:34",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\faker\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Mark Jebri",
-                "email": "mark.github@yandex.ru"
-            }
-        ],
-        "description": "Fixture generator. The Faker integration for the Yii framework.",
-        "keywords": [
-            "Fixture",
-            "faker",
-            "yii2"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-httpclient",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-httpclient.git",
-            "reference": "929c20a226e43ddbbc1a7468762c8890762e0785"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-httpclient/zipball/929c20a226e43ddbbc1a7468762c8890762e0785",
-            "reference": "929c20a226e43ddbbc1a7468762c8890762e0785",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": "~2.0.0"
-        },
-        "time": "2016-08-11 15:06:18",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\httpclient\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com"
-            }
-        ],
-        "description": "HTTP client extension for the Yii framework",
-        "keywords": [
-            "curl",
-            "http",
-            "httpclient",
-            "yii2"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-authclient",
-        "version": "2.1.0",
-        "version_normalized": "2.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-authclient.git",
-            "reference": "1e65f3af2c7095dbb55047f617231fc0ae601876"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/1e65f3af2c7095dbb55047f617231fc0ae601876",
-            "reference": "1e65f3af2c7095dbb55047f617231fc0ae601876",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2-httpclient": "~2.0.1"
-        },
-        "time": "2016-08-04 13:41:57",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
+        "time": "2015-11-30 10:53:14",
+        "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "psr-4": {
-                "yii\\authclient\\": ""
-            }
+            "classmap": [
+                "filters/",
+                "fpdi.php",
+                "fpdf_tpl.php",
+                "fpdi_pdf_parser.php",
+                "pdf_context.php"
+            ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-3-Clause"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com"
+                "name": "Jan Slabon",
+                "email": "jan.slabon@setasign.com",
+                "homepage": "https://www.setasign.com"
             }
         ],
-        "description": "External authentication via OAuth and OpenID for the Yii framework",
+        "description": "FPDI is a collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF. Because it is also possible to use FPDI with TCPDF, there are no fixed dependencies defined. Please see suggestions for packages which evaluates the dependencies automatically.",
+        "homepage": "https://www.setasign.com/fpdi",
         "keywords": [
-            "OpenId",
-            "api",
-            "auth",
-            "oauth",
-            "yii2"
+            "fpdf",
+            "fpdi",
+            "pdf"
+        ]
+    },
+    {
+        "name": "mpdf/mpdf",
+        "version": "6.1.x-dev",
+        "version_normalized": "6.1.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mpdf/mpdf.git",
+            "reference": "f316a8be3969d5772260b6f0709470af2004c5e1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mpdf/mpdf/zipball/f316a8be3969d5772260b6f0709470af2004c5e1",
+            "reference": "f316a8be3969d5772260b6f0709470af2004c5e1",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.4.0",
+            "setasign/fpdi": "1.6.*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.7"
+        },
+        "suggest": {
+            "ext-zlib": "Needed for compression of embedded resources, such as fonts"
+        },
+        "time": "2016-05-10 07:10:19",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "mpdf.php",
+                "classes"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Ian Back",
+                "role": "Developer"
+            }
+        ],
+        "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
+        "homepage": "http://mpdf.github.io",
+        "keywords": [
+            "pdf",
+            "php",
+            "utf-8"
+        ]
+    },
+    {
+        "name": "bower-asset/bootstrap3-dialog",
+        "version": "v1.35.2",
+        "version_normalized": "1.35.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
+            "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/49b786d4949bb02a22a9358d7d65f30e058c5438",
+            "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap": ">=3.1.0",
+            "bower-asset/jquery": ">=1.9.0"
+        },
+        "type": "bower-asset-library",
+        "extra": {
+            "bower-asset-main": [
+                "dist/less/bootstrap-dialog.less",
+                "dist/css/bootstrap-dialog.min.css",
+                "dist/js/bootstrap-dialog.min.js"
+            ],
+            "bower-asset-ignore": [
+                "source",
+                "spec",
+                ".bowerrc",
+                ".gitignore",
+                ".jshintignore",
+                ".jshintrc",
+                "bower.json",
+                "gruntfile.js",
+                "package.json",
+                "README.md"
+            ]
+        },
+        "installation-source": "dist",
+        "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
+        "keywords": [
+            "css",
+            "framework",
+            "front-end",
+            "js",
+            "less",
+            "mobile-first",
+            "responsive",
+            "web"
         ]
     },
     {
         "name": "dektrium/yii2-user",
-        "version": "0.9.8",
-        "version_normalized": "0.9.8.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/dektrium/yii2-user.git",
-            "reference": "772e3961bf2c1f6cd891985d3d0da7c89058dd2b"
+            "reference": "d9530a1b4213c2bd7fd8eb05d185dfe9dffde558"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/dektrium/yii2-user/zipball/772e3961bf2c1f6cd891985d3d0da7c89058dd2b",
-            "reference": "772e3961bf2c1f6cd891985d3d0da7c89058dd2b",
+            "url": "https://api.github.com/repos/dektrium/yii2-user/zipball/d9530a1b4213c2bd7fd8eb05d185dfe9dffde558",
+            "reference": "d9530a1b4213c2bd7fd8eb05d185dfe9dffde558",
             "shasum": ""
         },
         "require": {
@@ -1051,21 +604,20 @@
             "yiisoft/yii2-swiftmailer": "^2.0.0"
         },
         "require-dev": {
-            "codeception/aspect-mock": "*",
-            "codeception/specify": "*",
-            "codeception/verify": "*",
+            "codeception/specify": "^0.4.3",
+            "codeception/verify": "^0.3.1",
             "yiisoft/yii2-codeception": "^2.0.0"
         },
-        "time": "2016-08-09 09:18:57",
+        "time": "2016-08-13 15:45:38",
         "type": "yii2-extension",
         "extra": {
             "bootstrap": "dektrium\\user\\Bootstrap",
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
+            "branch-alias": {
+                "dev-master": "0.9.x-dev",
+                "dev-develop": "1.0.x-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "dektrium\\user\\": ""
@@ -1256,6 +808,270 @@
         ]
     },
     {
+        "name": "kartik-v/yii2-dialog",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-dialog.git",
+            "reference": "94b2b22d35aea7e900cb1365e825dc3bc4dd49f3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/94b2b22d35aea7e900cb1365e825dc3bc4dd49f3",
+            "reference": "94b2b22d35aea7e900cb1365e825dc3bc4dd49f3",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap3-dialog": "~1.34",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-08-02 11:59:56",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\dialog\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
+        "homepage": "https://github.com/kartik-v/yii2-dialog",
+        "keywords": [
+            "alert",
+            "bootstrap",
+            "dialog",
+            "extension",
+            "modal",
+            "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-grid",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-grid.git",
+            "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/6373e72c8747d64e9df53b4d03a76c7069f37431",
+            "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-dialog": "~1.0",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-08-09 13:17:33",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\grid\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.",
+        "homepage": "https://github.com/kartik-v/yii2-grid",
+        "keywords": [
+            "extension",
+            "grid",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-slider",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-slider.git",
+            "reference": "81a2463294fa88a58d0ed8214254c8a6b63b7e89"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-slider/zipball/81a2463294fa88a58d0ed8214254c8a6b63b7e89",
+            "reference": "81a2463294fa88a58d0ed8214254c8a6b63b7e89",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-krajee-base": "*"
+        },
+        "time": "2016-01-10 17:24:24",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\slider\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An advanced slider input for Yii Framework 2 for both touch enabled and desktop devices based on bootstrap-slider.",
+        "homepage": "https://github.com/kartik-v/yii2-slider",
+        "keywords": [
+            "bootstrap",
+            "bootstrap 3",
+            "extension",
+            "range",
+            "slider",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "5.x-dev",
+        "version_normalized": "5.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "17ba8f8fc03074f90771e52b226698e37bc2c115"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/17ba8f8fc03074f90771e52b226698e37bc2c115",
+            "reference": "17ba8f8fc03074f90771e52b226698e37bc2c115",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.1"
+        },
+        "time": "2016-07-09 18:06:48",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Corbyn"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "http://swiftmailer.org",
+        "keywords": [
+            "email",
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-mpdf",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-mpdf.git",
+            "reference": "d2513eb34e507097ceafc1125164c50aeb905547"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/d2513eb34e507097ceafc1125164c50aeb905547",
+            "reference": "d2513eb34e507097ceafc1125164c50aeb905547",
+            "shasum": ""
+        },
+        "require": {
+            "mpdf/mpdf": "<7.0"
+        },
+        "time": "2016-04-09 18:17:46",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\mpdf\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.",
+        "homepage": "https://github.com/kartik-v/yii2-mpdf",
+        "keywords": [
+            "component",
+            "extension",
+            "html",
+            "mpdf",
+            "pdf",
+            "utf8",
+            "yii2"
+        ]
+    },
+    {
         "name": "kartik-v/bootstrap-popover-x",
         "version": "v1.4.1",
         "version_normalized": "1.4.1.0",
@@ -1407,322 +1223,6 @@
         ]
     },
     {
-        "name": "setasign/fpdi",
-        "version": "1.6.1",
-        "version_normalized": "1.6.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Setasign/FPDI.git",
-            "reference": "5b899b2b41463bf261aa69840fd30b50950a500c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Setasign/FPDI/zipball/5b899b2b41463bf261aa69840fd30b50950a500c",
-            "reference": "5b899b2b41463bf261aa69840fd30b50950a500c",
-            "shasum": ""
-        },
-        "suggest": {
-            "setasign/fpdf": "FPDI will extend this class but as it is also possible to use \"tecnickcom/tcpdf\" as an alternative there's no fixed dependency configured.",
-            "setasign/fpdi-fpdf": "Use this package to automatically evaluate dependencies to FPDF.",
-            "setasign/fpdi-tcpdf": "Use this package to automatically evaluate dependencies to TCPDF."
-        },
-        "time": "2015-11-30 10:53:14",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "filters/",
-                "fpdi.php",
-                "fpdf_tpl.php",
-                "fpdi_pdf_parser.php",
-                "pdf_context.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jan Slabon",
-                "email": "jan.slabon@setasign.com",
-                "homepage": "https://www.setasign.com"
-            }
-        ],
-        "description": "FPDI is a collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF. Because it is also possible to use FPDI with TCPDF, there are no fixed dependencies defined. Please see suggestions for packages which evaluates the dependencies automatically.",
-        "homepage": "https://www.setasign.com/fpdi",
-        "keywords": [
-            "fpdf",
-            "fpdi",
-            "pdf"
-        ]
-    },
-    {
-        "name": "mpdf/mpdf",
-        "version": "6.1.x-dev",
-        "version_normalized": "6.1.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/mpdf/mpdf.git",
-            "reference": "f316a8be3969d5772260b6f0709470af2004c5e1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/mpdf/mpdf/zipball/f316a8be3969d5772260b6f0709470af2004c5e1",
-            "reference": "f316a8be3969d5772260b6f0709470af2004c5e1",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "php": ">=5.4.0",
-            "setasign/fpdi": "1.6.*"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^4.7"
-        },
-        "suggest": {
-            "ext-zlib": "Needed for compression of embedded resources, such as fonts"
-        },
-        "time": "2016-05-10 07:10:19",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "mpdf.php",
-                "classes"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Ian Back",
-                "role": "Developer"
-            }
-        ],
-        "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
-        "homepage": "http://mpdf.github.io",
-        "keywords": [
-            "pdf",
-            "php",
-            "utf-8"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-mpdf",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-mpdf.git",
-            "reference": "d2513eb34e507097ceafc1125164c50aeb905547"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/d2513eb34e507097ceafc1125164c50aeb905547",
-            "reference": "d2513eb34e507097ceafc1125164c50aeb905547",
-            "shasum": ""
-        },
-        "require": {
-            "mpdf/mpdf": "<7.0"
-        },
-        "time": "2016-04-09 18:17:46",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "kartik\\mpdf\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD 3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.",
-        "homepage": "https://github.com/kartik-v/yii2-mpdf",
-        "keywords": [
-            "component",
-            "extension",
-            "html",
-            "mpdf",
-            "pdf",
-            "utf8",
-            "yii2"
-        ]
-    },
-    {
-        "name": "bower-asset/bootstrap3-dialog",
-        "version": "v1.35.2",
-        "version_normalized": "1.35.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
-            "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/49b786d4949bb02a22a9358d7d65f30e058c5438",
-            "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap": ">=3.1.0",
-            "bower-asset/jquery": ">=1.9.0"
-        },
-        "type": "bower-asset-library",
-        "extra": {
-            "bower-asset-main": [
-                "dist/less/bootstrap-dialog.less",
-                "dist/css/bootstrap-dialog.min.css",
-                "dist/js/bootstrap-dialog.min.js"
-            ],
-            "bower-asset-ignore": [
-                "source",
-                "spec",
-                ".bowerrc",
-                ".gitignore",
-                ".jshintignore",
-                ".jshintrc",
-                "bower.json",
-                "gruntfile.js",
-                "package.json",
-                "README.md"
-            ]
-        },
-        "installation-source": "dist",
-        "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
-        "keywords": [
-            "css",
-            "framework",
-            "front-end",
-            "js",
-            "less",
-            "mobile-first",
-            "responsive",
-            "web"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-dialog",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-dialog.git",
-            "reference": "94b2b22d35aea7e900cb1365e825dc3bc4dd49f3"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/94b2b22d35aea7e900cb1365e825dc3bc4dd49f3",
-            "reference": "94b2b22d35aea7e900cb1365e825dc3bc4dd49f3",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap3-dialog": "~1.34",
-            "kartik-v/yii2-krajee-base": "~1.7"
-        },
-        "time": "2016-08-02 11:59:56",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "kartik\\dialog\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
-        "homepage": "https://github.com/kartik-v/yii2-dialog",
-        "keywords": [
-            "alert",
-            "bootstrap",
-            "dialog",
-            "extension",
-            "modal",
-            "yii2"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-grid",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-grid.git",
-            "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/6373e72c8747d64e9df53b4d03a76c7069f37431",
-            "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/yii2-dialog": "~1.0",
-            "kartik-v/yii2-krajee-base": "~1.7"
-        },
-        "time": "2016-08-09 13:17:33",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.1.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "kartik\\grid\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.",
-        "homepage": "https://github.com/kartik-v/yii2-grid",
-        "keywords": [
-            "extension",
-            "grid",
-            "widget",
-            "yii2"
-        ]
-    },
-    {
         "name": "johnitvn/yii2-ajaxcrud",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1775,6 +1275,554 @@
             "extension",
             "gii",
             "template",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-gii",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-gii.git",
+            "reference": "529e35ba79b6e25beb192da161ab0bf4f809cf2b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/529e35ba79b6e25beb192da161ab0bf4f809cf2b",
+            "reference": "529e35ba79b6e25beb192da161ab0bf4f809cf2b",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/typeahead.js": "0.10.* | ~0.11.0",
+            "phpspec/php-diff": ">=1.0.2",
+            "yiisoft/yii2": ">=2.0.4",
+            "yiisoft/yii2-bootstrap": "~2.0"
+        },
+        "time": "2016-08-08 21:46:45",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            },
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\gii\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
+            }
+        ],
+        "description": "The Gii extension for the Yii framework",
+        "keywords": [
+            "code generator",
+            "gii",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-composer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-composer.git",
+            "reference": "e882cc327a6935a41f2e8665b9ef0317f6852d4d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/e882cc327a6935a41f2e8665b9ef0317f6852d4d",
+            "reference": "e882cc327a6935a41f2e8665b9ef0317f6852d4d",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "time": "2016-06-05 20:34:32",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "yii\\composer\\Plugin",
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\composer\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
+            }
+        ],
+        "description": "The composer plugin for Yii extension installer",
+        "keywords": [
+            "composer",
+            "extension installer",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-framework.git",
+            "reference": "b9d8c65ad4a1784a802f48eb5d9a4a89a7c9e93b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/b9d8c65ad4a1784a802f48eb5d9a4a89a7c9e93b",
+            "reference": "b9d8c65ad4a1784a802f48eb5d9a4a89a7c9e93b",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+            "bower-asset/jquery.inputmask": "~3.2.2",
+            "bower-asset/punycode": "1.3.*",
+            "bower-asset/yii2-pjax": "~2.0.1",
+            "cebe/markdown": "~1.0.0 | ~1.1.0",
+            "ext-ctype": "*",
+            "ext-mbstring": "*",
+            "ezyang/htmlpurifier": "~4.6",
+            "lib-pcre": "*",
+            "php": ">=5.4.0",
+            "yiisoft/yii2-composer": "~2.0.4"
+        },
+        "time": "2016-08-15 22:47:23",
+        "bin": [
+            "yii"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com",
+                "homepage": "http://www.yiiframework.com/",
+                "role": "Founder and project lead"
+            },
+            {
+                "name": "Alexander Makarov",
+                "email": "sam@rmcreative.ru",
+                "homepage": "http://rmcreative.ru/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Maurizio Domba",
+                "homepage": "http://mdomba.info/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Carsten Brandt",
+                "email": "mail@cebe.cc",
+                "homepage": "http://cebe.cc/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Timur Ruziev",
+                "email": "resurtm@gmail.com",
+                "homepage": "http://resurtm.com/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Dmitry Naumenko",
+                "email": "d.naumenko.a@gmail.com",
+                "role": "Core framework development"
+            }
+        ],
+        "description": "Yii PHP Framework Version 2",
+        "homepage": "http://www.yiiframework.com/",
+        "keywords": [
+            "framework",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-swiftmailer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
+            "reference": "163b9c6273e133c43a596aef46a9f5b1537731f9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/163b9c6273e133c43a596aef46a9f5b1537731f9",
+            "reference": "163b9c6273e133c43a596aef46a9f5b1537731f9",
+            "shasum": ""
+        },
+        "require": {
+            "swiftmailer/swiftmailer": "~5.0",
+            "yiisoft/yii2": ">=2.0.4"
+        },
+        "time": "2016-04-14 08:50:13",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\swiftmailer\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "The SwiftMailer integration for the Yii framework",
+        "keywords": [
+            "email",
+            "mail",
+            "mailer",
+            "swift",
+            "swiftmailer",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-httpclient",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-httpclient.git",
+            "reference": "929c20a226e43ddbbc1a7468762c8890762e0785"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-httpclient/zipball/929c20a226e43ddbbc1a7468762c8890762e0785",
+            "reference": "929c20a226e43ddbbc1a7468762c8890762e0785",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "~2.0.0"
+        },
+        "time": "2016-08-11 15:06:18",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\httpclient\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "HTTP client extension for the Yii framework",
+        "keywords": [
+            "curl",
+            "http",
+            "httpclient",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-authclient",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-authclient.git",
+            "reference": "1e65f3af2c7095dbb55047f617231fc0ae601876"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/1e65f3af2c7095dbb55047f617231fc0ae601876",
+            "reference": "1e65f3af2c7095dbb55047f617231fc0ae601876",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2-httpclient": "~2.0.1"
+        },
+        "time": "2016-08-04 13:41:57",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\authclient\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "External authentication via OAuth and OpenID for the Yii framework",
+        "keywords": [
+            "OpenId",
+            "api",
+            "auth",
+            "oauth",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-codeception",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-codeception.git",
+            "reference": "572a6d46d942cc5733c45931fdbd1d60228f3c89"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/572a6d46d942cc5733c45931fdbd1d60228f3c89",
+            "reference": "572a6d46d942cc5733c45931fdbd1d60228f3c89",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": ">=2.0.4"
+        },
+        "time": "2016-04-14 08:46:27",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\codeception\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Mark Jebri",
+                "email": "mark.github@yandex.ru"
+            }
+        ],
+        "description": "The Codeception integration for the Yii framework",
+        "keywords": [
+            "codeception",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-bootstrap",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-bootstrap.git",
+            "reference": "f41768b3ad7524a7bfb65a328d085e83d32bbc7e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/f41768b3ad7524a7bfb65a328d085e83d32bbc7e",
+            "reference": "f41768b3ad7524a7bfb65a328d085e83d32bbc7e",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
+            "yiisoft/yii2": ">=2.0.6"
+        },
+        "time": "2016-07-27 22:19:11",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            },
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\bootstrap\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
+            }
+        ],
+        "description": "The Twitter Bootstrap extension for the Yii framework",
+        "keywords": [
+            "bootstrap",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-debug",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-debug.git",
+            "reference": "721045af916ed66cf217f4fe66137348a165e54c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/721045af916ed66cf217f4fe66137348a165e54c",
+            "reference": "721045af916ed66cf217f4fe66137348a165e54c",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": ">=2.0.4",
+            "yiisoft/yii2-bootstrap": "*"
+        },
+        "time": "2016-07-29 12:59:20",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\debug\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
+            }
+        ],
+        "description": "The debugger extension for the Yii framework",
+        "keywords": [
+            "debug",
+            "debugger",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-faker",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-faker.git",
+            "reference": "6e6eb430809e3f9c05e367303909a05a4912d4c0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/6e6eb430809e3f9c05e367303909a05a4912d4c0",
+            "reference": "6e6eb430809e3f9c05e367303909a05a4912d4c0",
+            "shasum": ""
+        },
+        "require": {
+            "fzaninotto/faker": "~1.4",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-04-14 08:47:34",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\faker\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Mark Jebri",
+                "email": "mark.github@yandex.ru"
+            }
+        ],
+        "description": "Fixture generator. The Faker integration for the Yii framework.",
+        "keywords": [
+            "Fixture",
+            "faker",
             "yii2"
         ]
     }

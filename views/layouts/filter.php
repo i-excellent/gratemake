@@ -12,44 +12,45 @@ use yii\helpers\Url;
             Фильтр работ
         </h3>
     </div>
+    <div class="form-group">
+        <?=Html::beginForm(Url::to(['/work']),'get',[]) ?>
     <div class="panel-body">
-        <div class="form-group">
-        <?php Html::beginForm(Url::to(['search/index']),'get',[]) ?>
         <div class="panel">
-           <?=Html::input('search',null,null,['class'=>'form-control','placeholder'=>'Поиск по теме'])?>
+           <?=Html::input('text','search',Yii::$app->request->get('search'),['class'=>'form-control','placeholder'=>'Поиск по теме'])?>
         </div>
         <div class="panel">
                 <label>Предмет</label>
-            <?=Html::dropDownList('item_type_id',null,ArrayHelper::map(Menu::find()->all(),'id' ,'name'),
+            <?=Html::dropDownList('menu',Yii::$app->request->get('menu'),array_merge([null=>'Выберите направление'],ArrayHelper::map(Menu::find()->all(),'id' ,'name')),
                 ['class'=>'form-control'])?>
         </div>
         <div class="panel">
             <label>Тип работы</label>
-            <?=Html::dropDownList('item_work','',\app\models\Work::getType(),['class'=>'form-control'])?>
+            <?=Html::dropDownList('type',Yii::$app->request->get('type'),array_merge([null=>'Выберите тип'],\app\models\Work::getType()),['class'=>'form-control'])?>
         </div>
         <div class="panel">
             <label>Год сдачи</label>
-            <?=Html::dropDownList('item_work',null,[0=>'Не важно',1=>'2000-'.date('Y'),2=>'2010-'.date('Y'),3=>date('Y'),],['class'=>'form-control'])?>
+            <?=Html::dropDownList('year',Yii::$app->request->get('year'),[1960=>'Не важно',2000=>'2000',2010=>'2010',date('Y')=>date('Y'),],
+                ['class'=>'form-control'])?>
         </div>
         <div class="panel">
             <label>Количество страниц</label>
-        <?=Html::dropDownList('item_work',null,[0=>'Не важно',2=>'1-20',3=>'20-50',4=>'50+',],['class'=>'form-control'])?></div>
+        <?=Html::dropDownList('page',Yii::$app->request->get('page'),[null=>'Не важно','20'=>'20+','50+'=>'50+','80'=>'80+',],['class'=>'form-control'])?></div>
         <div class="panel">
             <div class="checkbox">
                 <label>
-                    <?=Html::checkbox('min',null)?>
+                    <?=Html::checkbox('free',Yii::$app->request->get('free'))?>
                     Безплатно
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <?=Html::checkbox('min',null)?>
+                    <?=Html::checkbox('new',Yii::$app->request->get('new'))?>
                     Новые
                 </label>
             </div>
         </div>
         <?=Html::submitButton('Применить фильтр',['class'=>'btn btn-default form-control'])?>
-        <?php Html::endForm(); ?>
+        <?=Html::endForm(); ?>
     </div>
     </div>
 
