@@ -1,7 +1,0 @@
-
-body .data .col-md-7 .panel .panel-body .data.current, body .data .col-md-7 .panel .panel-body .data:hover {
-    background: rgba(0, 0, 0, 0) url("../images/data_icon_active.png") no-repeat scroll 3px 6px;
-}
-body .data .col-md-7 .panel .panel-body .orders {
-    background: rgba(0, 0, 0, 0) url("../images/orders_icon.png") no-repeat scroll 4px 6px;
-}

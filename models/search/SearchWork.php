@@ -2,6 +2,8 @@
 
 namespace app\models\search;
 
+use app\models\Menu;
+use app\models\Subject;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -21,7 +23,6 @@ class SearchWork extends Work
             [['id', 'id_menu', 'id_subject', 'id_user', 'id_type', 'count_page', 'views'], 'integer'],
             [['theme', 'name_file', 'description', 'time_public', 'save_name', 'year', 'bibliography', 'content', 'crypte_views'], 'safe'],
             [['price'], 'number'],
-
         ];
     }
 
@@ -95,6 +96,24 @@ class SearchWork extends Work
             $this->id_type=$params['type'];
             $this->id_menu=$params['menu'];
 
+            if($params['url_subject'] !== null)
+            {
+
+                $subject=Subject::findOne(['url' => $params['url_subject']])->toArray();
+                $this->id_subject=$subject['id'];
+
+            }
+            if($params['url_menu'] !== null)
+            {
+
+            $menu=Menu::findOne(['url' => $params['url_menu']])->toArray();
+                $this->id_menu=$menu['id'];
+
+            }
+            else
+            {
+                $this->id_menu=$params['menu'];
+            }
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
 
@@ -103,7 +122,10 @@ class SearchWork extends Work
         $query->andFilterWhere(['>=','year' , $this->year])
               ->andFilterWhere(['>=','count_page' , $this->count_page])
               ->andFilterWhere(['>=','price' , $this->price])
-              ->andFilterWhere(['id_type' => $this->id_type,'id_menu' => $this->id_menu])
+              ->andFilterWhere([
+                  'id_type' => $this->id_type,
+                  'id_menu' => $this->id_menu,
+                  'id_subject' => $this->id_subject])
               ->andFilterWhere(['>=','count_page' , $this->count_page]);
 
         $query->andFilterWhere(['like', 'theme', $params['search']])

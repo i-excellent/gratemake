@@ -1,4 +1,9 @@
 <?php
+use yii\helpers\Url;
+/* @var $work app\models\Work */
+$subject=$work->getSubject()->asArray()->one();
+$user=$work->getUser()->asArray()->one();
+Url::remember();
 $this->title = 'Публикации';
 $this->params['breadcrumbs'][] =  [
     'template' => "<li>{link}</li>\n", //  шаблон для этой ссылки
@@ -7,10 +12,11 @@ $this->params['breadcrumbs'][] =  [
 ];
 $this->params['breadcrumbs'][] =  [
     'template' => "<li>{link}</li>\n", //  шаблон для этой ссылки
-    'label' => 'Каталог', // название ссылки
-    'url' => ['/menu/catalog'] // сама ссылка
+    'label' => $subject['name'], // название ссылки
+    'url' => ['/menu/'.$subject['url']] // сама ссылка
 ];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="container-fluid">
     <div class="content-wrapper">
@@ -19,25 +25,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="col-md-5">
                     <div class="product col-md-12 service-image-left">
                         <center>
-             <img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
+     <img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt="">
+                            </img>
                         </center>
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <div class="product-title">Corsair GS600 600 Watt PSU</div>
-                    <div class="product-desc">The Corsair Gaming Series GS600 is the ideal price/performance choice for mid-spec gaming PC</div>
-                    <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+                    <div class="product-title"><?=$work->theme?></div>
+                    <div class="product-desc">Предмет:<?=$subject['name']?></div>
+                    <div class="product-desc">Автор:<?= $user['username']?></div>
                     <hr>
-                    <?php if($work['cost']>1):?>
-                    <div class="product-price">$ 1234.00</div>
+                    <?php if($work->price>1):?>
+                    <div class="product-price"><?=$work->price?>  Руб.</div>
                     <?php else:?>
                     <div class="product-stock">Бесплатно</div>
                     <?php endif;?>
                     <hr>
                     <div class="btn-group cart">
-                        <button type="button" class="btn btn-success">
+                        <a href="/work/download/" type="button" class="btn btn-success">
                             Скачать
-                        </button>
+                        </a>
                     </div>
                     <div class="btn-group wishlist">
                         <button type="button" class="btn btn-danger">
@@ -60,32 +67,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="tab-pane fade in active" id="service-one">
 
                         <section class="container product-info">
-                            The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.
-
-                            <h3>Corsair Gaming Series GS600 Features:</h3>
-                            <li>It supports the latest ATX12V v2.3 standard and is backward compatible with ATX12V 2.2 and ATX12V 2.01 systems</li>
-                            <li>An ultra-quiet 140mm double ball-bearing fan delivers great airflow at an very low noise level by varying fan speed in response to temperature</li>
-                            <li>80Plus certified to deliver 80% efficiency or higher at normal load conditions (20% to 100% load)</li>
-                            <li>0.99 Active Power Factor Correction provides clean and reliable power</li>
-                            <li>Universal AC input from 90~264V — no more hassle of flipping that tiny red switch to select the voltage input!</li>
-                            <li>Extra long fully-sleeved cables support full tower chassis</li>
-                            <li>A three year warranty and lifetime access to Corsair’s legendary technical support and customer service</li>
-                            <li>Over Current/Voltage/Power Protection, Under Voltage Protection and Short Circuit Protection provide complete component safety</li>
-                            <li>Dimensions: 150mm(W) x 86mm(H) x 160mm(L)</li>
-                            <li>MTBF: 100,000 hours</li>
-                            <li>Safety Approvals: UL, CUL, CE, CB, FCC Class B, TÜV, CCC, C-tick</li>
+                            <?=$work->description?>
                         </section>
 
                     </div>
                     <div class="tab-pane fade" id="service-two">
-
                         <section class="container">
-
+                        <?=$work->content?>
                         </section>
 
                     </div>
                     <div class="tab-pane fade" id="service-three">
-
+                        <section>
+                            <?=$work->bibliography?>
+                        </section>
                     </div>
                 </div>
                 <hr>

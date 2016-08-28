@@ -57,18 +57,21 @@ AppAsset::register($this);
                 [
                     'label' => Yii::$app->user->identity->username,
                     'items' => [
-                        ['label' => 'Профиль', 'url' => '/user/settings/'],
-                        ['label' => 'Ваши роботы', 'url' => '/user/profile'],
-                        ['label' => 'История', 'url' => '/user/profile'],
+                        '<li><a href="/user/settings/"><span class="fa fa-user"></span>  Профиль</a></li>',
+                        '<li><a href="/user/profile/"><span class="fa fa-book"></span>  Ваши роботы</a></li>',
+                        '<li><a href="/user/profile/"><span class="fa fa-hdd-o"></span>  История</a></li>',
                         '<li class="divider"></li>',
                         '<li class="dropdown-header"></li>',
                         '<li>'
-                        . Html::beginForm(['/user/logout'], 'post', ['class' => 'navbar-form navbar-left'])
-                        . Html::submitButton('Выход',['class'=>'form-control'])
+                        . Html::beginForm(['/user/logout'], 'post', ['class' => 'navbar-form navbar-left '])
+                        . Html::submitButton(' Выход',['class'=>'form-control fa fa-sign-out'])
                         . Html::endForm()
-                        . '</li>',
+                        . '</li>'
                     ],
-                ],],
+
+                ],
+            (!Yii::$app->user->isGuest)?'<li><a href="#">'.number_format(Yii::$app->user->identity->cash, 0, ',', ' ').' <span class="fa fa-rub"></span></a></li>':'<li></li>',
+        ],
     ]);?>
     <?php NavBar::end(); ?>
     <div class="container">
@@ -81,9 +84,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Yii::$app->name?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"></p>
     </div>
 </footer>
 

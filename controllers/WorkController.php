@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use yii\helpers\Url;
 use Yii;
 use app\models\Work;
 use app\models\search\SearchWork;
@@ -36,9 +37,11 @@ class WorkController extends Controller
 
     /**
      * Lists all Work models.
+     * @param string $url_menu
+     * @param string $url_subject
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($url_menu = null,$url_subject = null)
     {
         $searchModel = new SearchWork();
         $query = $searchModel->searchMenu(Yii::$app->request->queryParams);
@@ -48,13 +51,17 @@ class WorkController extends Controller
         $models = $query->offset($pages->offset)
             ->limit(12)
             ->all();
-
-
         return $this->render('show', ['row'=>$models ,'pages'=>$pages]);
     }
-
+    /**
+     * Displays a single Work model for buyer.
+     * @param integer $id
+     * @return object Work
+     */
     public function actionPresent($id){
-        $work=Work::findOne(['id'=>$id])->toArray();
+        $work=$this->findModel($id);
+        $work->views=$work->views+1;
+        $work->save();
         return $this->render('present',['work'=>$work]);
     }
     /**
@@ -221,7 +228,13 @@ class WorkController extends Controller
         if($model->id_user != Yii::$app->user->getId()){
             throw new NotFoundHttpException('Заприщенное действие');
         }
-        $model->delete();
+        else{
+            if($model->delete())
+            {
+                unlink('uploads/users/'.Yii::$app->user->getId().'/'.$model->save_name);
+            }
+        }
+
         if($request->isAjax){
             /*
             *   Process for ajax request
@@ -287,5 +300,22 @@ class WorkController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    /**
+     * Download work user for id.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDownload($id = 1){
+        $work = Work::findOne(['id' => $id]);
+        if ($work === null) {
+            throw new NotFoundHttpException('Работа не найдена');
+        }
+        if($work->price < 1){
+       return Yii::$app->response->sendFile('uploads/users/'.$work->id_user.'/'.$work->save_name, $attachmentName = $work->name_file, $options = []);
+        }
+    return $this->goBack(Url::previous());
     }
 }

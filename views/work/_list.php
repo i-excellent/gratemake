@@ -14,11 +14,11 @@ foreach ($row as $item):?>
                             <?=$desc =(strlen($item['description'])>600)?substr($item['description'], 0, 599).'...':$item['description'];?>
                             </p>
                         <ul>
-                            <li style="width:25%;"><a href="#website"><span class="fa fa-globe"></span>
+                            <li style="width:25%;"><a href="#website"><span class="fa fa-calendar"></span>
                                     Защита: <?=$protect=(!empty($item['year']))?$item['year'].' г.':'(Не указано)';?></a></li>
-                            <li style="width:25%;"><a href="#website"><span class="fa fa-globe"></span>
+                            <li style="width:25%;"><a href="#website"><span class="glyphicon glyphicon-list-alt"></span>
                                     Страницы: <?=$page=(!empty($item['count_page']))?$item['count_page']:'(Не указано)';?></a></li>
-                            <li style="width:25%;"><a href="#website"><span class="fa fa-globe"></span>
+                            <li style="width:25%;"><a href="#website"><span class="glyphicon glyphicon-eye-open"></span>
                                     Просмотры:<?=$item['views']?></a></li>
                             <li style="width:25%;"><span class="fa fa-money"></span>
                                 Цена:<?=$price =($item['price']>1)?$item['price'].' Руб':'Бесплатно';?>
